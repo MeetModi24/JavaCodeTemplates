@@ -1,0 +1,1 @@
+Java variables are title of reserved memory location.
