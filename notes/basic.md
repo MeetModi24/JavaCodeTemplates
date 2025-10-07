@@ -1,46 +1,122 @@
-Programming Paradigm
-1) Procedural Programming
-2) Functional Programming
-3) Object Oriented Programming
+# Java Programming Notes
 
-Compilation of code
-.java  -----> .class(byte code) -----> machine code
+## Programming Paradigm
+
+1. **Procedural Programming**
+2. **Functional Programming**
+3. **Object-Oriented Programming**
+
+---
+
+## Compilation of Code
+
+```
+.java  ----->  .class (byte code)  ----->  machine code
        javac                    JVM
+```
 
-Components of JVM: Class Loader, Memory area, Execution engine: Interpreter, JIT compiler, Garbage collection
+---
 
-JVM-->JRE-->JDK
+## Components of JVM
 
-Everything in JAVA is written in classes.
-class- a user defined blueprint having attributes and methods
+* **Class Loader**
+* **Memory Area**
+* **Execution Engine**
 
-public static void main(String[] args){} --> is a function(method)
-Return type of function: void
-Function name: main --> entry point of java program
-public : access modifier, visible to all
-static : allows us to call the functions, methods without creating object of class.
-String[] args: default command line arguments string list
+  * Interpreter
+  * JIT (Just-In-Time) Compiler
+* **Garbage Collection**
 
-Eg. javac Main.java
-java Main arg_1 arg_2
+---
 
-class HelloWorld{
-    public static void main(String[] args){
+## JVM → JRE → JDK
+
+* **JVM (Java Virtual Machine)** → Executes Java bytecode.
+* **JRE (Java Runtime Environment)** → JVM + standard libraries required for execution.
+* **JDK (Java Development Kit)** → JRE + compiler and development tools.
+
+---
+
+## Everything in Java is Written in Classes
+
+A **class** is a user-defined blueprint having **attributes** and **methods**.
+
+Example:
+
+```
+class Example {
+    int num;             // attribute
+    void display() {     // method
+        System.out.println(num);
+    }
+}
+```
+
+---
+
+## The main() Method
+
+```
+public static void main(String[] args) { }
+```
+
+| Component         | Description                                            |
+| ----------------- | ------------------------------------------------------ |
+| **public**        | Access modifier, visible to all.                       |
+| **static**        | Allows calling the method without creating an object.  |
+| **void**          | Return type — does not return a value.                 |
+| **main**          | Entry point of the Java program.                       |
+| **String[] args** | Default command-line argument list (array of strings). |
+
+---
+
+## Example Program
+
+```
+class HelloWorld {
+    public static void main(String[] args) {
         System.out.println(args[0]);
     }
 }
+```
 
-Compilation step:
+### Compilation Steps
+
+```
 javac HelloWorld.java
 java HelloWorld arg_1 arg_2
+```
 
+---
 
-System.out.println() --> print the output and then create new line for next
-System : class present by default providing input, output, and error methods
-out : object of class PrintStream class
-println : method in PrintStream class
+## System.out.println() Explanation
 
+`System.out.println()` → Prints the output and then creates a new line for the next output.
+
+| Component   | Description                                                              |
+| ----------- | ------------------------------------------------------------------------ |
+| **System**  | Predefined class providing access to input, output, and error streams.   |
+| **out**     | Object of the `PrintStream` class.                                       |
+| **println** | Method in `PrintStream` class that prints output followed by a new line. |
+
+Example:
+
+```
 System.out.print("Hello Java");
 System.out.println(args[0]);
-Output: Hello Javaarg_1
+```
 
+**Output:**
+
+```
+Hello Javaarg_1
+```
+
+---
+
+### Notes
+
+* `System.out.print()` → Prints the output **without** moving to a new line.
+* `System.out.println()` → Prints the output **and moves** to a new line.
+
+---
